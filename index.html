@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打磚塊遊戲</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="menu">
+        <button onclick="setDifficulty('easy')">簡單</button>
+        <button onclick="setDifficulty('normal')">中等</button>
+        <button onclick="setDifficulty('hard')">困難</button>
+    </div>
+    <div id="gameStats">
+        <span id="lives">生命: 3</span>
+        <span id="timer">倒數計時: 60秒</span>
+        <span id="combo">連擊: 0</span>
+    </div>
+    <div id="backgroundUpload">
+        <label for="backgroundFile">選擇背景圖片：</label>
+        <input type="file" id="backgroundFile" accept="image/*" onchange="loadBackground(event)">
+    </div>
+    <div id="score">分數: 0</div>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="gameOver" class="game-over">
+            <h2>遊戲結束</h2>
+            <p>最終分數: <span id="finalScore">0</span></p>
+            <button onclick="setDifficulty(currentDifficulty)" class="pulse">重新開始</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
